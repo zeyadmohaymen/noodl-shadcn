@@ -24,14 +24,18 @@ interface LucideIconProps {
   iconName: string; // The name of the icon to render
   size?: number; // Size of the icon
   color?: string; // Color of the icon
+  fill?: string; // Fill color for the
+  className?: string; // Additional class name for the icon
 //   strokeWidth?: number; // Stroke width for the icon
 }
 
 // Component to render the dynamically imported icon
 export const DynamicLucideIcon: React.FC<LucideIconProps> = ({
+  className,
   iconName,
   size = 24,
   color = 'currentColor',
+  fill = 'none',
 //   strokeWidth = 2,
   ...props
 }) => {
@@ -40,7 +44,7 @@ export const DynamicLucideIcon: React.FC<LucideIconProps> = ({
 
   return (
     <Suspense fallback={<div/>}>
-      <IconComponent size={size} color={color} {...props} />
+      <IconComponent className={className} size={size} color={color} fill={fill} {...props} />
         {/* <IconComponent {...props} /> */}
     </Suspense>
   );

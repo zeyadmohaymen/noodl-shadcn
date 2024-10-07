@@ -40,11 +40,18 @@ export const CardHeaderNode = Noodl.defineReactNode({
   initialize() {},
   getReactComponent() {
     return (props: CardProps) => (
-      <Card.CardHeader>{props.children}</Card.CardHeader>
+      <Card.CardHeader className={props.className}>{props.children}</Card.CardHeader>
     );
   },
   inputs: {},
-  inputProps: {},
+  inputProps: {
+    className: {
+      displayName: "Class Name",
+      type: "string",
+      default: "",
+      group: "Advanced",
+    },
+  },
   outputProps: {},
 });
 
@@ -55,7 +62,7 @@ export const CardTitleNode = Noodl.defineReactNode({
   initialize() {},
   getReactComponent() {
     return (props: CardProps) => (
-      <Card.CardTitle>{props.title}</Card.CardTitle>
+      <Card.CardTitle className={props.className}>{props.title}</Card.CardTitle>
     );
   },
   inputs: {},
@@ -64,6 +71,12 @@ export const CardTitleNode = Noodl.defineReactNode({
       displayName: "Title",
       type: "string",
       default: "Card Title",
+    },
+    className: {
+      displayName: "Class Name",
+      type: "string",
+      default: "",
+      group: "Advanced",
     },
   },
   outputProps: {},
@@ -76,7 +89,7 @@ export const CardDescriptionNode = Noodl.defineReactNode({
   initialize() {},
   getReactComponent() {
     return (props: CardProps) => (
-      <Card.CardDescription>{props.description}</Card.CardDescription>
+      <Card.CardDescription className={props.className}>{props.description}</Card.CardDescription>
     );
   },
   inputs: {},
@@ -85,6 +98,12 @@ export const CardDescriptionNode = Noodl.defineReactNode({
       displayName: "Description",
       type: "string",
       default: "Card Description",
+    },
+    className: {
+      displayName: "Class Name",
+      type: "string",
+      default: "",
+      group: "Advanced",
     },
   },
   outputProps: {},
@@ -97,11 +116,18 @@ export const CardContentNode = Noodl.defineReactNode({
   initialize() {},
   getReactComponent() {
     return (props: CardProps) => (
-      <Card.CardContent>{props.children}</Card.CardContent>
+      <Card.CardContent className={props.className}>{props.children}</Card.CardContent>
     );
   },
   inputs: {},
-  inputProps: {},
+  inputProps: {
+    className: {
+      displayName: "Class Name",
+      type: "string",
+      default: "",
+      group: "Advanced",
+    },
+  },
   outputProps: {},
 });
 
