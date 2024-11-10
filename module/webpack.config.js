@@ -7,7 +7,7 @@ const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 const pjson = require("./package.json");
 var outputPath = path.resolve(
-  __dirname, '../dist'
+  __dirname, "../dist"
 );
 
 module.exports = {
