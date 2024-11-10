@@ -1,0 +1,34 @@
+name: Deploy build to noodl-shadcn-module
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build project
+      run: |
+        cd module
+        npm install
+        npm run build
+
+    - name: Push to module repository
+      env:
+        REPO: zeyadmohaymen/noodl-shadcn-module
+        BRANCH: main
+        PAT: ${{ secrets.PAT }}  # Personal Access Token stored in GitHub Secrets
+      run: |
+        cd ../dist
+        git init
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add .
+        git commit -m "Deploy to another repository"
+        git push --force "https://${PAT}@github.com/${REPO}.git" master:${BRANCH}
