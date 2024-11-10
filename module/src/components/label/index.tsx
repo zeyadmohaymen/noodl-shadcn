@@ -6,7 +6,6 @@ import { Label } from "./label";
 export interface LabelProps {
   htmlFor: string;
   text: string;
-  className?: string;
 }
 
 export const LabelNode = Noodl.defineReactNode({
@@ -16,7 +15,7 @@ export const LabelNode = Noodl.defineReactNode({
   initialize() {},
   getReactComponent() {
     return (props: LabelProps) => (
-      <Label htmlFor={props.htmlFor} className={props.className}>{props.text}</Label>
+      <Label htmlFor={props.htmlFor}>{props.text}</Label>
     );
   },
   inputs: {},
@@ -26,10 +25,6 @@ export const LabelNode = Noodl.defineReactNode({
     },
     text: {
       type: "string",
-    },
-    className: {
-      type: "string",
-      default: "",
     },
   },
   outputProps: {},

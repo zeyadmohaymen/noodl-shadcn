@@ -41,9 +41,3 @@ import "./components/toast";
 import "./components/toggle";
 import "./components/toggle-group";
 import "./components/tooltip";
-
-import "./blocks/navbar";
-import "./components/wrapper";
-import "./components/lucide-icon";
-import "./components/link";
-import "./components/container";
