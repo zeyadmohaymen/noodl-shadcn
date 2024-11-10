@@ -7,8 +7,8 @@ const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 const pjson = require("./package.json");
 var outputPath = path.resolve(
-  'F:/zeyad/Documents/repos/Noodl/projects/Project Shad Dev',
-  "noodl_modules/" + pjson.name,
+  __dirname,
+  "../project/noodl_modules/" + pjson.name,
 );
 
 module.exports = {

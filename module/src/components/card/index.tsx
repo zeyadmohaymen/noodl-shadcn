@@ -4,32 +4,23 @@ import Noodl from "@noodl/noodl-sdk";
 import * as Card from "./card";
 
 export interface CardProps {
-  title?: string;
-  description?: string;
   children: ReactNode[];
-  className?: string;
 }
 
 export const CardNode = Noodl.defineReactNode({
-  name: "Shadcn Card",
-  category: "Shadcn Components",
+  name: "shadcn.card",
+  displayName: "SH_Card",
+  category: "shadcn Card",
   initialize() {},
   getReactComponent() {
     return (props: CardProps) => {
-      return <Card.Card className={props.className}>{props.children}</Card.Card>;
+      return <Card.Card>{props.children}</Card.Card>;
     };
   },
   allowChildren: true,
   allowChildrenWithCategory: ["shadcn Card"],
   inputs: {},
-  inputProps: {
-    className: {
-      displayName: "Class Name",
-      type: "string",
-      default: "",
-      group: "Advanced",
-    },
-  },
+  inputProps: {},
   outputProps: {},
 });
 
@@ -40,18 +31,11 @@ export const CardHeaderNode = Noodl.defineReactNode({
   initialize() {},
   getReactComponent() {
     return (props: CardProps) => (
-      <Card.CardHeader className={props.className}>{props.children}</Card.CardHeader>
+      <Card.CardHeader>{props.children}</Card.CardHeader>
     );
   },
   inputs: {},
-  inputProps: {
-    className: {
-      displayName: "Class Name",
-      type: "string",
-      default: "",
-      group: "Advanced",
-    },
-  },
+  inputProps: {},
   outputProps: {},
 });
 
@@ -62,23 +46,11 @@ export const CardTitleNode = Noodl.defineReactNode({
   initialize() {},
   getReactComponent() {
     return (props: CardProps) => (
-      <Card.CardTitle className={props.className}>{props.title}</Card.CardTitle>
+      <Card.CardTitle>{props.children}</Card.CardTitle>
     );
   },
   inputs: {},
-  inputProps: {
-    title: {
-      displayName: "Title",
-      type: "string",
-      default: "Card Title",
-    },
-    className: {
-      displayName: "Class Name",
-      type: "string",
-      default: "",
-      group: "Advanced",
-    },
-  },
+  inputProps: {},
   outputProps: {},
 });
 
@@ -89,23 +61,11 @@ export const CardDescriptionNode = Noodl.defineReactNode({
   initialize() {},
   getReactComponent() {
     return (props: CardProps) => (
-      <Card.CardDescription className={props.className}>{props.description}</Card.CardDescription>
+      <Card.CardDescription>{props.children}</Card.CardDescription>
     );
   },
   inputs: {},
-  inputProps: {
-    description: {
-      displayName: "Description",
-      type: "string",
-      default: "Card Description",
-    },
-    className: {
-      displayName: "Class Name",
-      type: "string",
-      default: "",
-      group: "Advanced",
-    },
-  },
+  inputProps: {},
   outputProps: {},
 });
 
@@ -116,18 +76,11 @@ export const CardContentNode = Noodl.defineReactNode({
   initialize() {},
   getReactComponent() {
     return (props: CardProps) => (
-      <Card.CardContent className={props.className}>{props.children}</Card.CardContent>
+      <Card.CardContent>{props.children}</Card.CardContent>
     );
   },
   inputs: {},
-  inputProps: {
-    className: {
-      displayName: "Class Name",
-      type: "string",
-      default: "",
-      group: "Advanced",
-    },
-  },
+  inputProps: {},
   outputProps: {},
 });
 
